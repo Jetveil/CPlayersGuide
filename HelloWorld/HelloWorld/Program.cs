@@ -22,9 +22,9 @@
 // --- The thing namer 3000
 
 Console.WriteLine("What kind of thing are we talking about?");
-string a = Console.ReadLine();
+string a = Console.ReadLine(); /* This var is reading user input */
 Console.WriteLine("How would you describe it? Big? Azure? Tattered?");
-string b = Console.ReadLine();
-string c = " of Doom";
-string d = "3000";
+string b = Console.ReadLine(); // This var is reading user input
+string c = " of Doom"; // This var is writing to the console
+string d = "3000"; /* This var is writing to the console */
 Console.WriteLine("The " + b + " " + a + c + " " + d + "!");
