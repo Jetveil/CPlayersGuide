@@ -60,3 +60,29 @@
 // Console.WriteLine(aFloat);
 // Console.WriteLine(aDouble);
 // Console.WriteLine(aDecimal);
+
+// --- The triangle farmer
+
+// Console.WriteLine("Enter the width of the triangle:");
+// string inputWidth = Console.ReadLine();
+// float width = float.Parse(inputWidth);
+//
+// Console.WriteLine("Enter the height of the triangle:");
+// string inputHeight = Console.ReadLine();
+// float height = float.Parse(inputHeight);
+// float area = width * height / 2f;
+// Console.WriteLine("Area of the triangle is: " + area);
+
+// --- The Four Sisters and the Duckbear
+
+// Console.WriteLine("How many choco egg collected today?");
+// string inputEggsGathered = Console.ReadLine();
+// int eggsGathered = int.Parse(inputEggsGathered);
+// int eggPerSister = eggsGathered / 4;
+// float eggsToDuckbear = eggsGathered % 4;
+// Console.WriteLine("Each sister gets " + eggPerSister + " eggs.");
+// Console.WriteLine("Duckbear gets " + eggsToDuckbear + " eggs.");
+
+
+// --- The Dominion of Kings
+
