@@ -16,7 +16,7 @@
 //     Console.WriteLine("Incorrect name!");
 //     name = "Wanderer";
 // }
-// Console.WriteLine("Noted: " + name + " will get the bread");
+// Console.WriteLine("Noted:" + name + " will get the bread");
 
 
 // --- The thing namer 3000
@@ -86,3 +86,49 @@
 
 // --- The Dominion of Kings
 
+// Console.WriteLine("Amount of Estates you have:");
+// int estates = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Amount of Duchies you have:");
+// int duchies = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Amount of Provinces you have:");
+// int provinces = Convert.ToInt32(Console.ReadLine());
+// int total = estates + duchies * 3 + provinces * 6;
+// Console.WriteLine("Total amount of points you have:" + total);
+
+
+// float num = 123.456f;
+// double newDoubleNum = num;
+// int newIntNum = (int)num;
+// Console.WriteLine(num);
+// Console.WriteLine(newDoubleNum);
+// Console.WriteLine(newIntNum);
+
+// long longNum = 10;
+// byte byteLongNum = (byte)longNum;
+// Console.WriteLine(byteLongNum);
+
+// Console.WriteLine("Press any key to exit: ");
+// Console.ReadKey(true);
+
+// Console.BackgroundColor = ConsoleColor.Yellow;
+// Console.ForegroundColor = ConsoleColor.Black;
+// Console.WriteLine("Ji");
+// Console.Beep();
+
+// --- The Defense of Consolas
+
+Console.WriteLine("Target row:");
+int row = int.Parse(Console.ReadLine());
+Console.WriteLine("Target column:");
+int column = int.Parse(Console.ReadLine());
+Console.WriteLine("Deploy to:");
+
+int rowDec = row - 1;
+int colDec = column - 1;
+int rowInc = row + 1;
+int colInc = column + 1;
+
+Console.WriteLine($"({row}, {colDec})");
+Console.WriteLine($"({rowDec}, {column})");
+Console.WriteLine($"({row}, {colInc})");
+Console.WriteLine($"({rowInc}, {column})");
