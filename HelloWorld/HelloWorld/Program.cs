@@ -117,18 +117,176 @@
 
 // --- The Defense of Consolas
 
-Console.WriteLine("Target row:");
-int row = int.Parse(Console.ReadLine());
-Console.WriteLine("Target column:");
-int column = int.Parse(Console.ReadLine());
-Console.WriteLine("Deploy to:");
+// Console.WriteLine("Target row:");
+// int row = int.Parse(Console.ReadLine());
+// Console.WriteLine("Target column:");
+// int column = int.Parse(Console.ReadLine());
+// Console.WriteLine("Deploy to:");
+//
+// int rowDec = row - 1;
+// int colDec = column - 1;
+// int rowInc = row + 1;
+// int colInc = column + 1;
+//
+// Console.WriteLine($"({row}, {colDec})");
+// Console.WriteLine($"({rowDec}, {column})");
+// Console.WriteLine($"({row}, {colInc})");
+// Console.WriteLine($"({rowInc}, {column})");
 
-int rowDec = row - 1;
-int colDec = column - 1;
-int rowInc = row + 1;
-int colInc = column + 1;
+// --- Repearing the Clocktower
 
-Console.WriteLine($"({row}, {colDec})");
-Console.WriteLine($"({rowDec}, {column})");
-Console.WriteLine($"({row}, {colInc})");
-Console.WriteLine($"({rowInc}, {column})");
+// Console.WriteLine("Enter the number:");
+//
+// string input = Console.ReadLine();
+// int number = Convert.ToInt32(input);
+//
+// if (number % 2 == 0) {
+//     Console.WriteLine("Left");
+// } else {
+//     Console.WriteLine("Right");
+// }
+
+// --- Watchtower
+
+// Console.WriteLine("Enter X coordinate of the enemy:");
+//
+// string inputX = Console.ReadLine();
+// int x = Convert.ToInt32(inputX);
+//
+// Console.WriteLine("Enter Y coordinate of the enemy:");
+//
+// string inputY = Console.ReadLine();
+// int y = Convert.ToInt32(inputY);
+//
+// if (x < 0 && y > 0)
+//     Console.WriteLine("Enemy is to the North-West!");
+// else if (x == 0 && y > 0)
+//     Console.WriteLine("Enemy is to the North!");
+// else if (x > 0 && y > 0)
+//     Console.WriteLine("Enemy is to the North-East!");
+// else if (x < 0 && y == 0)
+//     Console.WriteLine("Enemy is to the West!");
+// else if (x == 0 && y == 0)
+//     Console.WriteLine("Enemy is right HERE!");
+// else if (x > 0 && y == 0)
+//     Console.WriteLine("Enemy is to the East!");
+// else if (x < 0 && y < 0)
+//     Console.WriteLine("Enemy is to the South-West!");
+// else if (x == 0 && y < 0)
+//     Console.WriteLine("Enemy is to the South!");
+// else if (x > 0 && y < 0)
+//     Console.WriteLine("Enemy is to the South-East!");
+
+// --- Buying inventory
+
+// Console.WriteLine("The following items are available:");
+// Console.WriteLine("1 – Rope");
+// Console.WriteLine("2 – Torches");
+// Console.WriteLine("3 – Climbing Equipment");
+// Console.WriteLine("4 – Clean Water");
+// Console.WriteLine("5 – Machete");
+// Console.WriteLine("6 – Canoe");
+// Console.WriteLine("7 – Food Supplies");
+// Console.WriteLine();
+// Console.WriteLine("What number do you want to see the price of?");
+//
+// int userInput = Convert.ToInt32(Console.ReadLine());
+//
+// switch (userInput)
+// {
+//     case 1:
+//         Console.WriteLine("Rope costs 10 gold");
+//         break;
+//     case 2:
+//         Console.WriteLine("Torches costs 15 gold");
+//         break;
+//     case 3:
+//         Console.WriteLine("Climbing equipment costs 25 gold");
+//         break;
+//     case 4:
+//         Console.WriteLine("Clean Water costs 1 gold");
+//         break;
+//     case 5:
+//         Console.WriteLine("Machete costs 20 gold");
+//         break;
+//     case 6:
+//         Console.WriteLine("Canoe costs 200 gold");
+//         break;
+//     case 7:
+//         Console.WriteLine("Food Supplies cost 1 gold");
+//         break;
+//     default:
+//         Console.WriteLine("Please enter a valid option");
+//         break;
+// }
+
+// --- Discounted Inventory 
+
+
+// Console.WriteLine("The following items are available:");
+// Console.WriteLine("1 – Rope");
+// Console.WriteLine("2 – Torches");
+// Console.WriteLine("3 – Climbing Equipment");
+// Console.WriteLine("4 – Clean Water");
+// Console.WriteLine("5 – Machete");
+// Console.WriteLine("6 – Canoe");
+// Console.WriteLine("7 – Food Supplies");
+// Console.WriteLine();
+// Console.WriteLine("What number do you want to see the price of?");
+//
+// int userInputNum = Convert.ToInt32(Console.ReadLine());
+//
+// Console.WriteLine("What's your name?");
+//
+// string userInputName = Console.ReadLine();
+//
+// string item = userInputNum switch
+// {
+//     1 => "Rope",
+//     2 => "Torches",
+//     3 => "Climbing Equipment",
+//     4 => "Clean Water",
+//     5 => "Machete",
+//     6 => "Canoe",
+//     7 => "Food Supplies",
+// };
+//
+// int price = item switch
+// {
+//     "Rope" => 10,
+//     "Torches" => 14,
+//     "Climbing Equipment" => 20,
+//     "Clean Water" => 6,
+//     "Machete" => 18,
+//     "Canoe" => 50,
+//     "Food Supplies" => 16,
+// };
+//
+// if (userInputName == "Ermak") price /= 2;
+// Console.WriteLine($"{item} costs {price}");
+
+
+// --- Multiply table
+
+// int totalRows = 5;
+// int totalColumns = 5;
+//
+// for (int currentRow = 1; currentRow <= totalRows; currentRow++)
+// {
+//     for (int currentColumn = 1; currentColumn <= totalColumns; currentColumn++)
+//     {
+//         Console.Write("*");
+//     }
+//     Console.WriteLine();
+// }
+
+
+// --- The Prototype
+
+Console.WriteLine("User 1, enter a number between 0 and 100:");
+string user1_input = Console.ReadLine();
+int user1_num = Convert.ToInt32(user1_input);
+
+if (user1_num < 0 || user1_num > 100)
+{
+}
