@@ -283,41 +283,72 @@
 
 // --- The Prototype
 
-Console.WriteLine("User 1, enter a number between 0 and 100:");
-string user1_input = Console.ReadLine();
-int user1_num = Convert.ToInt32(user1_input);
+// Console.WriteLine("User 1, enter a number between 0 and 100:");
+// string user1_input = Console.ReadLine();
+// int user1_num = Convert.ToInt32(user1_input);
+//
+// while (user1_num < 0 || user1_num > 100)
+// {
+//     Console.WriteLine("Enter a walid number between 0 and 100:");
+//     user1_input = Console.ReadLine();
+//     user1_num = Convert.ToInt32(user1_input);
+// }
+//
+// Console.Clear();
+//
+// Console.WriteLine("User 2, guess the number.");
+// string user2_input; // Объявляем здесь
+// int user2_num; // Объявляем здесь
+//
+// while (true) // Используем цикл, из которого выйдем с помощью break
+// {
+//     user2_input = Console.ReadLine();
+//     user2_num = Convert.ToInt32(user2_input);
+//
+//     if (user2_num == user1_num)
+//     {
+//         Console.WriteLine("You are right!");
+//         break; // Выход из цикла, если число угадано
+//     }
+//     else if (user2_num > user1_num)
+//     {
+//         Console.WriteLine($"{user2_num} is too high!");
+//         Console.WriteLine("What is your next guess?");
+//     }
+//     else // user2_num < user1_num
+//     {
+//         Console.WriteLine($"{user2_num} is too low!");
+//         Console.WriteLine("What is your next guess?");
+//     }
+// }
 
-while (user1_num < 0 || user1_num > 100)
-{
-    Console.WriteLine("Enter a walid number between 0 and 100:");
-    user1_input = Console.ReadLine();
-    user1_num = Convert.ToInt32(user1_input);
-}
 
-Console.Clear();
+// --- The Magic Cannon
 
-Console.WriteLine("User 2, guess the number.");
-string user2_input; // Объявляем здесь
-int user2_num; // Объявляем здесь
-
-while (true) // Используем цикл, из которого выйдем с помощью break
-{
-    user2_input = Console.ReadLine();
-    user2_num = Convert.ToInt32(user2_input);
-
-    if (user2_num == user1_num)
-    {
-        Console.WriteLine("You are right!");
-        break; // Выход из цикла, если число угадано
-    }
-    else if (user2_num > user1_num)
-    {
-        Console.WriteLine($"{user2_num} is too high!");
-        Console.WriteLine("What is your next guess?");
-    }
-    else // user2_num < user1_num
-    {
-        Console.WriteLine($"{user2_num} is too low!");
-        Console.WriteLine("What is your next guess?");
-    }
-}
+// for (int shot = 1; shot <= 100; shot++)
+// {
+//     if (shot % 3 == 0 && shot % 5 == 0)
+//     {
+//         Console.ForegroundColor = ConsoleColor.Magenta;
+//         Console.WriteLine($"{shot}. ULTRA BLAST!");
+//         Console.ResetColor();
+//     }
+//     else if (shot % 3 == 0)
+//     {
+//         Console.ForegroundColor = ConsoleColor.Red;
+//         Console.WriteLine($"{shot}. Fire blast!");
+//         Console.ResetColor();
+//     }
+//     else if (shot % 5 == 0)
+//     {
+//         Console.ForegroundColor = ConsoleColor.Yellow;
+//         Console.WriteLine($"{shot}. Electric blast!");
+//         Console.ResetColor();
+//     }
+//     else
+//     {
+//         Console.ForegroundColor = ConsoleColor.White;
+//         Console.WriteLine($"{shot}. Normal shot!");
+//         Console.ResetColor();
+//     }
+// }
