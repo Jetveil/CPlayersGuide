@@ -352,3 +352,116 @@
 //         Console.ResetColor();
 //     }
 // }
+
+
+// --- Fill an array with '1' of based on user input value
+
+// int length = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[length];
+//
+// for (int index = 0; index < array.Length; index++)
+// {
+//     array[index] = 1;
+// }
+//
+// Console.WriteLine(array.Length);
+
+// --- Smallest value in Array
+
+// int[] array = new[] { 1, 2, -3, 4, 5, 6, -7, 8, 9, 10 };
+// int smallestValue = int.MaxValue;
+//
+// for (int index = 0; index < array.Length; index++)
+// {
+//     if (array[index] < smallestValue)
+//     {
+//         smallestValue =  array[index];
+//     }
+// }
+//
+// Console.WriteLine(smallestValue);
+
+// --- Average of the array
+
+// int[] array = new[] { 4, 51, -7, 13, -99, 15, -8, 45, 90 };
+//
+// int total = 0;
+//
+// for (int index = 0; index < array.Length; index++)
+// {
+//     total += array[index];
+// }
+//
+// float average = Convert.ToSingle(total) / array.Length;
+// Console.WriteLine(average);
+
+// --- The Replicator of D'To
+
+// int[] array = new int[5];
+//
+// Console.WriteLine("Enter 5 numbers to fill the array");
+//
+// for (int index = 0; index < array.Length; index++)
+// {
+//     int userInput = Convert.ToInt32(Console.ReadLine());
+//     array[index] += userInput;
+// }
+//
+// Console.WriteLine("First array:");
+// for (int index = 0; index < array.Length; index++)
+// {
+//     Console.Write(array[index] + " "); // Выводим каждый элемент и пробел после него
+// }
+//
+// Console.WriteLine();
+//
+// int[] newArray = array;
+//
+// Console.WriteLine("Second, copied array:");
+//
+// for (int index = 0; index < newArray.Length; index++)
+// {
+//     Console.Write(array[index] + " "); // Выводим каждый элемент и пробел после него
+// }
+
+// --- The Laws of Freach
+
+// int[] array = new[] { 1, 2, -3, 4, 5, 6, -9, 8, 9, 10 };
+// int smallestValue = int.MaxValue;
+//
+// foreach (int var in array)
+// {
+//     if (var < smallestValue)
+//     {
+//         smallestValue = var;
+//     }    
+// }
+//
+// Console.WriteLine(smallestValue);
+
+// -----
+
+// int[] array = new[] { 4, 51, -7, 13, -99, 15, -8, 45, 90 };
+//
+// int total = 0;
+// foreach (int number in array)
+// {
+//     total += number;
+// }
+//
+// float average = Convert.ToSingle(total) / array.Length;
+// Console.WriteLine(average);
+
+// --- Looping through multi-dimensional array
+
+int[,] matrix = new int[4, 4];
+
+for (int row = 0; row < matrix.GetLength(0); row++)
+{
+    for (int column = 0; column < matrix.GetLength(1); column++)
+    {
+        Console.Write(matrix[column, row] + " ");
+    }
+
+    Console.WriteLine();
+}
