@@ -466,3 +466,60 @@
 //     Console.WriteLine();
 // }
 
+// --- Void and return methods
+
+// Console.WriteLine("What number should I count to?");
+// int chosenNumber = ReadNumber();
+// Console.WriteLine();
+// Count(chosenNumber);
+//
+// void Count(int numberToCountTo)
+// {
+//     for (int current = 1; current <= numberToCountTo; current++)
+//     {
+//         Console.WriteLine(current);
+//     }
+// }
+//
+// int ReadNumber()
+// {
+//     int number = Convert.ToInt32(Console.ReadLine());
+//     return number;
+// }
+
+// --- Taking a number
+
+// int result = AskForNumber("How long is your dick?");
+// int rangeResult = AskForNumberInRange("Enter number between 0 and 100: ", 0, 100);
+//
+// int AskForNumber(string text)
+// {
+//     Console.WriteLine(text);
+//     int responseNumber = Convert.ToInt32(Console.ReadLine());
+//     Console.WriteLine(responseNumber);
+//     return responseNumber;
+// }
+//
+// int AskForNumberInRange(string text, int min, int max)
+// {
+//     while (true)
+//     {
+//         int number = AskForNumber(text);
+//         if (number >= min && number <= max)
+//         {
+//             return number;
+//         }
+//     }
+// }
+
+// --- Countdown
+
+// int ReverseCount(int x)
+// {
+//     if (x < 1) return 1;
+//     Console.WriteLine(x);
+//     return ReverseCount(x - 1);
+// }
+//
+// ReverseCount(11);
+
