@@ -523,3 +523,112 @@
 //
 // ReverseCount(11);
 
+
+// ---  Hunting the Manticore
+
+int manticore_HP = 15;
+int consolas_HP = 10;
+int round = 1;
+
+// Получение начального расстония размещения Мантикоры от 1го пользователя
+int manticoreRange = AskForNumberInRange("Enter the distance to place Manticore ship form 0 to 100:", 0, 100);
+Console.Clear();
+
+Console.WriteLine("Player 2, it's your turn!");
+
+
+// --- Выполняющийся цикл игры пока ХП города или Mантикоры не упадет до 0
+while (consolas_HP > 0 && manticore_HP > 0)
+{
+    // Отображение статуса текущего Раунда
+    Console.WriteLine("-------------------");
+    DisplayStatus(round, consolas_HP, manticore_HP);
+
+    // Отображение ожидаемого урона
+    int damage = DamageForRound(round);
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine($"The cannon is expected to deal {damage} damage this round");
+
+    // Получение расстояния выстрела от второго игрока
+    Console.ForegroundColor = ConsoleColor.White;
+    int fireRange = AskForNumber("Enter desired cannon range:");
+
+    // Отображение результата раунда
+    Console.ForegroundColor = ConsoleColor.Magenta;
+    DisplayOverOrUnder(fireRange, manticoreRange);
+
+    // Нанесение урона Мантикоре
+    if (fireRange == manticoreRange) manticore_HP -= damage;
+
+    // Нансение урона городу, если Мантикора жива
+    if (manticore_HP > 0) consolas_HP--;
+    
+    // Переход на следующий раунд
+    round++;
+}
+
+bool won = consolas_HP > 0;
+DisplayWinOrLose(won);
+
+
+// --- Methods
+
+// Выводит результат игры
+void DisplayWinOrLose(bool won)
+{
+    if (won)
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("The Manticore has been destroyed! The city is saved!");
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("The city is destroyed! The Manticore and Uncoded one won!");
+    }
+}
+
+// Выводит информацию о выстреле. Недолет, перелет или попадаение
+void DisplayOverOrUnder(int fireRange, int manticoreRange)
+{
+    if (fireRange < manticoreRange) Console.WriteLine("That round was a UNDERSHOOT of Manticore");
+    else if (fireRange > manticoreRange) Console.WriteLine("That round was a OVERSHOOT of Manticore");
+    else Console.WriteLine("That round was a DIRECT HIT");
+}
+
+int DamageForRound(int roundNumber)
+{
+    if (roundNumber % 3 == 0 && roundNumber % 5 == 0) return 10; // Fire-Electric Multi Blast!!
+    else if (roundNumber % 3 == 0) return 3; // Fire blast
+    else if (roundNumber % 5 == 0) return 3; // Electric blast
+    return 1; // Normal blast
+}
+
+void DisplayStatus(int round, int consolas_HP, int manticore_HP)
+{
+    Console.WriteLine($"Round: {round}, Consolas HP: {consolas_HP}/10, Manticore HP: {manticore_HP}/15");
+}
+
+// Получает от пользователя число с расстоянием размещения Мантикоры
+int AskForNumber(string text)
+{
+    Console.Write(text + " ");
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    int number = Convert.ToInt32(Console.ReadLine());
+    return number;
+}
+
+// Получает от пользователя число с расстоянием размещения Мантикоры
+// и проверяет условие вхождения в интервал
+
+int AskForNumberInRange(string text, int min, int max)
+{
+    while (true)
+    {
+        int number = AskForNumber(text);
+        if (number >= min && number <= max)
+        {
+            return number;
+        }
+    }
+}
