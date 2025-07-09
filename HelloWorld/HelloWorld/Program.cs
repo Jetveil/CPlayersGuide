@@ -634,34 +634,438 @@
 // }
 
 
-// --- Simuls's Test
+// --- Simula's Test
 
-ChestState state = ChestState.Locked;
+// ChestState state = ChestState.Locked;
+//
+// while (true)
+// {
+//     Console.WriteLine($"The chest is {state}. What do you want to do?:");
+//     string userInput = Console.ReadLine();
+//
+//     if (state == ChestState.Locked && userInput == "unlock") state = ChestState.Closed;
+//     if (state == ChestState.Closed && userInput == "open") state = ChestState.Open;
+//     if (state == ChestState.Open && userInput == "close") state = ChestState.Closed;
+//     if (state == ChestState.Closed && userInput == "lock") state = ChestState.Locked;
+// }
+//
+// enum ChestState
+// {
+//     Locked,
+//     Closed,
+//     Open
+// }
 
-while (true)
-{
-    Console.WriteLine($"The chest is {state}. What do you want to do?:");
-    string userInput = Console.ReadLine();
 
-    switch (state)
-    {
-        case ChestState:
-            state = 
-        
-    }
-    
-    // if (userInput == "unlock" && state == ChestState.Locked) state = ChestState.Unlocked;
-    // else if (userInput == "")
-    // else
-    // {
-    //     Console.WriteLine($"You cant {userInput} the chest because the chest is {state}!");
-    // }
-}
+// --- Simula's Soup
 
-enum ChestState
-{
-    Locked,
-    Unlocked,
-    Closed,
-    Open
-}
+//
+// (SoupType type, MainIngredient ingredient, SoupSeasoning seasoning) soup = GetSoup();
+// Console.WriteLine($"Your soup is of {soup.type}, {soup.ingredient}, {soup.seasoning}");
+//
+// (SoupType, MainIngredient, SoupSeasoning) GetSoup()
+// {
+//     SoupType type = GetSoupType();
+//     MainIngredient ingredient = GetMainIngredient();
+//     SoupSeasoning seasoning = GetSoupSeasoning();
+//     return (type, ingredient, seasoning);
+// }
+//
+// SoupType GetSoupType()
+// {
+//     Console.WriteLine("Choose soup type (soup, stew, gumbo): ");
+//     string input = Console.ReadLine();
+//     return input switch
+//     {
+//         "soup" => SoupType.Soup,
+//         "stew" => SoupType.Stew,
+//         "gumbo" => SoupType.Gumbo
+//     };
+// }
+//
+// MainIngredient GetMainIngredient()
+// {
+//     Console.WriteLine("Choose main ingredient (mushrooms, chicken, carrots, potatoes): ");
+//     string input = Console.ReadLine();
+//     return input switch
+//     {
+//         "mushrooms" => MainIngredient.Mushrooms,
+//         "chicken" => MainIngredient.Chicken,
+//         "carrots" => MainIngredient.Carrots,
+//         "potatoes" => MainIngredient.Potatoes
+//     };
+// }
+//
+// SoupSeasoning GetSoupSeasoning()
+// {
+//     Console.WriteLine("Choose soup seasoning (spicy, salty, sweet): ");
+//     string input = Console.ReadLine();
+//     return input switch
+//     {
+//         "spicy" => SoupSeasoning.Spicy,
+//         "salty" => SoupSeasoning.Salty,
+//         "sweet" => SoupSeasoning.Sweet
+//     };
+// }
+//
+//
+// enum SoupType
+// {
+//     Soup,
+//     Stew,
+//     Gumbo
+// }
+//
+// enum MainIngredient
+// {
+//     Mushrooms,
+//     Chicken,
+//     Carrots,
+//     Potatoes
+// }
+//
+// enum SoupSeasoning
+// {
+//     Spicy,
+//     Salty,
+//     Sweet
+// }
+
+
+// --- Claude Excercise RPG Combat system ---
+
+// using System;
+
+// Определяем enum для классов персонажей
+// enum CharacterClass
+// {
+//     Warrior,
+//     Mage,
+//     Archer,
+//     Rogue,
+//     Necromancer
+// }
+
+// // Определяем enum для редкости предметов
+// enum WeaponRarity
+// {
+//     Common,
+//     Rare,
+//     Epic,
+//     Legendary
+// }
+//
+// enum WeaponType
+// {
+//     Sword,
+//     Staff,
+//     Bow,
+//     Dagger
+// }
+
+// class Program
+// {
+//     static void Main()
+//     {
+//
+//         Console.WriteLine("=== Система управления персонажами RPG ===\n");
+//
+//         // Создаем кортеж с информацией о персонаже
+//         var character = CreateCharacter();
+//
+//         // Выводим информацию о персонаже
+//         DisplayCharacterInfo(character);
+//
+//         // Создаем и выводим информацию о предмете
+//         var item = CreateItem();
+//         DisplayItemInfo(item);
+//
+//         // Вычисляем итоговую силу персонажа с предметом
+//         int totalPower = CalculateTotalPower(character, item);
+//         Console.WriteLine($"\nОбщая сила персонажа с предметом: {totalPower}");
+//
+//         // Создаем второго персонажа и выводим информацию о нем
+//         Console.WriteLine("\n=== СОЗДАНИЕ ВТОРОГО ПЕРСОНАЖА ===");
+//
+//         var character2 = CreateCharacter();
+//         DisplayCharacterInfo(character2);
+//         var item2 = CreateItem();
+//         DisplayItemInfo(item2);
+//
+//         int totalPower2 = CalculateTotalPower(character2, item2);
+//         Console.WriteLine($"\nОбщая сила персонажа с предметом: {totalPower2}");
+//
+//         // Сравнение персонажей
+//         Console.WriteLine("\n=== СРАВНЕНИЕ ПЕРСОНАЖЕЙ ===");
+//         CompareCharacters(character, item, character2, item2);
+//     }
+//
+//     // Метод для создания персонажа
+//     static (string name, CharacterClass characterClass, int level, int basePower) CreateCharacter()
+//     {
+//         Console.Write("Введите имя персонажа: ");
+//         string name = Console.ReadLine();
+//
+//         Console.WriteLine("Выберите класс персонажа:");
+//         Console.WriteLine("1 - Воин (Warrior)");
+//         Console.WriteLine("2 - Маг (Mage)");
+//         Console.WriteLine("3 - Лучник (Archer)");
+//         Console.WriteLine("4 - Разбойник (Rogue)");
+//         Console.WriteLine("5 - Некромант (Necromancer)");
+//
+//         int classChoice = int.Parse(Console.ReadLine());
+//         CharacterClass characterClass = (CharacterClass)(classChoice - 1);
+//
+//         Console.Write("Введите уровень персонажа (1-100): ");
+//         int level = int.Parse(Console.ReadLine());
+//
+//         // Базовая сила зависит от класса
+//         int basePower = characterClass switch
+//         {
+//             CharacterClass.Warrior => 100,
+//             CharacterClass.Mage => 80,
+//             CharacterClass.Archer => 90,
+//             CharacterClass.Rogue => 85,
+//             CharacterClass.Necromancer => 75,
+//             _ => 75
+//         };
+//
+//         return (name, characterClass, level, basePower);
+//     }
+//
+//     // Метод для создания предмета
+//     static (string weaponName, WeaponType type, WeaponRarity rarity, int powerBonus) CreateItem()
+//     {
+//         Console.WriteLine("\nСоздание оружия:");
+//
+//         Console.Write("Введите название оружия: ");
+//         string weaponName = Console.ReadLine();
+//
+//         Console.WriteLine("Выберите тип оружия: ");
+//         Console.WriteLine("1 - Меч (Sword)");
+//         Console.WriteLine("2 - Посох (Staff)");
+//         Console.WriteLine("3 - Лук (Bow)");
+//         Console.WriteLine("4 - Кинжал (Dagger)");
+//
+//         int typeChoice = int.Parse(Console.ReadLine());
+//         WeaponType type = (WeaponType)(typeChoice - 1);
+//
+//         Console.WriteLine("Выберите редкость оружия:");
+//         Console.WriteLine("1 - Обычный (Common)");
+//         Console.WriteLine("2 - Редкий (Rare)");
+//         Console.WriteLine("3 - Эпический (Epic)");
+//         Console.WriteLine("4 - Легендарный (Legendary)");
+//
+//         int rarityChoice = int.Parse(Console.ReadLine());
+//         WeaponRarity rarity = (WeaponRarity)(rarityChoice - 1);
+//
+//         // Бонус к силе зависит от редкости
+//         int powerBonus = rarity switch
+//         {
+//             WeaponRarity.Common => 10,
+//             WeaponRarity.Rare => 25,
+//             WeaponRarity.Epic => 50,
+//             WeaponRarity.Legendary => 100,
+//             _ => 5
+//         };
+//
+//         return (weaponName, type, rarity, powerBonus);
+//     }
+//
+//     // Метод для отображения информации о персонаже
+//     static void DisplayCharacterInfo((string name, CharacterClass characterClass, int level, int basePower) character)
+//     {
+//         Console.WriteLine($"\n=== Информация о персонаже ===");
+//         Console.WriteLine($"Имя: {character.name}");
+//         Console.WriteLine($"Класс: {GetClassDescription(character.characterClass)}");
+//         Console.WriteLine($"Уровень: {character.level}");
+//         Console.WriteLine($"Базовая сила: {character.basePower}");
+//     }
+//
+//     // Метод для отображения информации о предмете
+//     static void DisplayItemInfo((string weaponName, WeaponType type, WeaponRarity rarity, int powerBonus) item)
+//     {
+//         Console.WriteLine($"\n=== Информация о предмете ===");
+//         Console.WriteLine($"Название: {item.weaponName}");
+//         Console.WriteLine($"Тип: {item.type}");
+//         Console.WriteLine($"Редкость: {GetRarityDescription(item.rarity)}");
+//         Console.WriteLine($"Бонус к силе: +{item.powerBonus}");
+//     }
+//
+//     // Метод для сравнения харакетиристик персонажей
+//
+//     static void CompareCharacters(
+//         (string name, CharacterClass characterClass, int level, int basePower) character1,
+//         (string weaponName, WeaponType type, WeaponRarity rarity, int powerBonus) item,
+//         (string name, CharacterClass characterClass, int level, int basePower) character2,
+//         (string weaponName, WeaponType type, WeaponRarity rarity, int powerBonus) item2
+//     )
+//     {
+//         int power1 = CalculateTotalPower(character1, item);
+//         int power2 = CalculateTotalPower(character2, item2);
+//
+//         Console.WriteLine($"{character1.name} (сила: {power1}) VS {character2.name} (сила: {power2})"
+//         );
+//
+//         if (power1 > power2)
+//         {
+//             Console.ForegroundColor = ConsoleColor.Green;
+//             Console.WriteLine($"🏆 {character1.name} сильнее! Разница в силе: {power1 - power2}");
+//         }
+//         else if (power2 > power1)
+//         {
+//             Console.ForegroundColor = ConsoleColor.Red;
+//             Console.WriteLine($"🏆 {character2.name} сильнее! Разница в силе: {power2 - power1}");
+//         }
+//         else
+//         {
+//             Console.ForegroundColor = ConsoleColor.Yellow;
+//             Console.WriteLine("🤝 Персонажи равны по силе!");
+//         }
+//
+//         Console.ResetColor();
+//
+//     }
+//
+//
+//     // Метод для получения описания класса
+//     static string GetClassDescription(CharacterClass characterClass)
+//     {
+//         return characterClass switch
+//         {
+//             CharacterClass.Warrior => "Воин - мастер ближнего боя",
+//             CharacterClass.Mage => "Маг - владеет магическими заклинаниями",
+//             CharacterClass.Archer => "Лучник - эксперт дальнего боя",
+//             CharacterClass.Rogue => "Разбойник - скрытный и быстрый",
+//             CharacterClass.Necromancer => "Некромант - повелитель мертвых",
+//             _ => "Неизвестный класс"
+//         };
+//     }
+//
+//     // Метод для получения описания редкости
+//     static string GetRarityDescription(WeaponRarity rarity)
+//     {
+//         return rarity switch
+//         {
+//             WeaponRarity.Common => "Обычный предмет",
+//             WeaponRarity.Rare => "Редкий предмет",
+//             WeaponRarity.Epic => "Эпический предмет",
+//             WeaponRarity.Legendary => "Легендарный предмет",
+//             _ => "Неизвестная редкость"
+//         };
+//     }
+//
+//     // Метод для вычисления общей силы персонажа
+//         static int CalculateTotalPower(
+//             (string name, CharacterClass characterClass, int level, int basePower) character,
+//             (string weaponName, WeaponType type, WeaponRarity rarity, int powerBonus) item)
+//         {
+//             int levelBonus = character.level * 2; // 2 очка силы за каждый уровень
+//             return character.basePower + levelBonus + item.powerBonus;
+//         }
+//     }
+
+
+// --- Vin Fletcher’s Arrow ---
+
+
+// Arrow arrow = GetArrow();
+// Console.WriteLine($"That arrow costs {arrow.GetCost()} gold.");
+//
+//
+// Arrow GetArrow()
+// {
+//     ArrowheadTypes arrowhead = GetArrowheadType();
+//     FletchingTypes fletching = GetFletchingType();
+//     float length = GetLength();
+//
+//     return new Arrow(arrowhead, length, fletching);
+// }
+//
+//
+// ArrowheadTypes GetArrowheadType()
+// {
+//     Console.WriteLine("Choose Arrowhead type: steel, wood, obsidian:");
+//     string input = Console.ReadLine();
+//     return input switch
+//     {
+//         "steel" => ArrowheadTypes.Steel,
+//         "wood" => ArrowheadTypes.Wood,
+//         "obsidian" => ArrowheadTypes.Obsidian
+//     };
+// }
+//
+// FletchingTypes GetFletchingType()
+// {
+//     Console.WriteLine("Choose Fletching type: plastic, turkey feather, goose feather:");
+//     string input = Console.ReadLine();
+//     return input switch
+//     {
+//         "plastic" => FletchingTypes.Plastic,
+//         "turkey feather" => FletchingTypes.TurkeyFeathers,
+//         "goose feather" => FletchingTypes.GooseFeathers
+//     };
+// }
+//
+// float GetLength()
+// {
+//     float length = 0;
+//     while (length < 60 || length > 100)
+//     {
+//         Console.Write("Arrow length (between 60 and 100): ");
+//         length = Convert.ToSingle(Console.ReadLine());
+//     }
+//
+//     return length;
+// }
+//
+//
+// class Arrow
+// {
+//     public ArrowheadTypes _arrowhead;
+//     public FletchingTypes _fletching;
+//     public float _shaft;
+//
+//     public Arrow(ArrowheadTypes arrowhead, float shaft_length, FletchingTypes fletching)
+//     {
+//         _arrowhead = arrowhead;
+//         _fletching = fletching;
+//         _shaft = shaft_length;
+//     }
+//
+//     public float GetCost()
+//     {
+//         float arrowheadCost = _arrowhead switch
+//         {
+//             ArrowheadTypes.Steel => 10,
+//             ArrowheadTypes.Wood => 3,
+//             ArrowheadTypes.Obsidian => 5
+//         };
+//
+//         float fletchingCost = _fletching switch
+//         {
+//             FletchingTypes.Plastic => 10,
+//             FletchingTypes.TurkeyFeathers => 5,
+//             FletchingTypes.GooseFeathers => 3
+//         };
+//
+//         float shaftCost = 0.05f * _shaft;
+//
+//         return arrowheadCost + fletchingCost + shaftCost;
+//     }
+// }
+//
+//
+// enum ArrowheadTypes
+// {
+//     Steel,
+//     Wood,
+//     Obsidian
+// }
+//
+// enum FletchingTypes
+// {
+//     Plastic,
+//     TurkeyFeathers,
+//     GooseFeathers
+// }
